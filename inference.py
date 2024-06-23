@@ -28,7 +28,7 @@ def get_tokenizer_model(model_name):
     )
     return tokenizer, model
 
-def run_inference(question, prompt_file="/mnt/workspace/text2sql-webapi/prompt.md", metadata_file="/mnt/workspace/text2sql-webapi/nba.schema"):
+def run_inference(question, prompt_file="/mnt/workspace/prompt.md", metadata_file="/mnt/workspace/nba.schema"):
     tokenizer, model = get_tokenizer_model("defog/llama-3-sqlcoder-8b")
     # tokenizer, model = get_tokenizer_model("defog/sqlcoder-7b-2")
     prompt = generate_prompt(question, prompt_file, metadata_file)
